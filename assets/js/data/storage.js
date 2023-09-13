@@ -1,7 +1,6 @@
-const STORAGE_KEY = 'books'
+import config from '../utils/const.js'
 let books = []
 const isStorageExist = () => {
-  /* eslint valid-typeof: "error" */
   if (typeof (Storage) === 'undefined') {
     // eslint-disable-next-line no-undef
     Swal.fire({
@@ -17,18 +16,18 @@ const isStorageExist = () => {
 const saveBookData = () => {
   if (isStorageExist()) {
     const booksData = JSON.stringify(books)
-    localStorage.setItem(STORAGE_KEY, booksData)
-    document.dispatchEvent(new Event('savedata'))
+    localStorage.setItem(config.STORAGE_KEY, booksData)
+    document.dispatchEvent(new Event(config.SAVED_EVENT))
   }
 }
 const loadDataFromStorage = () => {
   if (!isStorageExist()) return
-  const serializedData = localStorage.getItem(STORAGE_KEY)
+  const serializedData = localStorage.getItem(config.STORAGE_KEY)
   const data = JSON.parse(serializedData)
 
   if (data !== null) {
     books = data
-    document.dispatchEvent(new Event('renderdata'))
+    document.dispatchEvent(new Event(config.RENDER_EVENT))
   }
 }
 
@@ -52,4 +51,4 @@ const searchBook = (title) => {
     return (book.title.toLowerCase().match(title.toLowerCase())) ? book : null
   })
 }
-export { books,isStorageExist, saveBookData, loadDataFromStorage, findBookIndex, findBook, searchBook }
+export { books, isStorageExist, saveBookData, loadDataFromStorage, findBookIndex, findBook, searchBook }

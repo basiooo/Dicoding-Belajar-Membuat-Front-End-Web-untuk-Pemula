@@ -49,6 +49,9 @@ body {
 }
 // Header
 .header {
+    @media (max-width: 1200px) {
+        padding: 10px 16px 10px 16px;
+    }
     padding: 0 15px 0 15px;
     display: flex;
     justify-content: center;
@@ -59,13 +62,22 @@ body {
         0 3px 6px rgba(0, 0, 0, 0.23);
 
     .header-item {
-        padding: 16px;
+        padding: 16px 0 16px 0;
         max-width: 1200px;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        .header-title{
+            @media (max-width: 576px) {
+                padding-top: 5px;
+                font-size: 1.5em !important;
+            }
+        }
         .darkmode-button {
+            @media (max-width: 576px) {
+                font-size: 1.6em !important;
+            }
             background-color: transparent;
             border: none;
             min-width: 44px;
@@ -90,7 +102,7 @@ body {
     background-color: var(--secondary-background-color);
     color: var(--primary-text-color);
     line-height: 25px;
-    a{
+    a {
         color: var(--primary-text-color);
     }
 }
@@ -98,7 +110,10 @@ main {
     max-width: 1200px;
 
     margin: 0 auto;
-    padding: 16px;
+    
+    @media (max-width: 1200px) {
+        padding: 16px;
+    }
 }
 //CARD
 .card {
@@ -115,8 +130,14 @@ main {
         max-width: 1200px;
 
         .card-body {
+            padding: 15px 25px 25px 25px !important;
             line-height: 27px;
         }
+
+    .card-body {
+        padding: 9px 25px 25px 25px;
+        color: var(--secondary-text-color);
+    }
     }
     .card-header {
         padding: 15px 20px 0px 20px;
@@ -125,7 +146,7 @@ main {
         border-bottom: 1px solid var(--secondary-text-color);
     }
     .card-body {
-        padding: 15px 25px 25px 25px;
+        padding: 9px 25px 25px 25px;
         color: var(--secondary-text-color);
     }
     .card-footer {
@@ -270,7 +291,7 @@ main {
 }
 
 .btn-icon {
-    font-size: 25px;
+    font-size: 20px;
     background-color: transparent;
     color: var(--primary-text-color);
     outline: none;
@@ -283,14 +304,14 @@ main {
             color: #f44336 !important;
         }
     }
-    &.btn-checked {
+    &.btn-double-checked {
         &:hover {
             color: #00e113 !important;
         }
     }
-    &.btn-cross {
+    &.btn-checked {
         &:hover {
-            color: #e15600 !important;
+            color: var(--primary-accent-color) !important;
         }
     }
 }

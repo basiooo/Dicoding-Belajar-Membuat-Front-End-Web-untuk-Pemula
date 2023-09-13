@@ -1,0 +1,32 @@
+{
+    "theme_color": "#2979ff",
+    "background_color": "#2979ff",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Dicoding BookShelf App",
+    "short_name": "BookShelf",
+    "description": "Dicoding Submission untuk kelas Belajar Membuat Front-End Web untuk Pemula",
+    "icons": [
+        {
+            "src": "/assets/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

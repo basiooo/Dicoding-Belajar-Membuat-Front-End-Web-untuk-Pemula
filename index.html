@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Dicoding Submission</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2979ff"/>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.11/dark.css" rel="stylesheet" id="sweetalert-dark" disabled>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,7 +18,7 @@
 <body class="darkmode">
     <header class="header">
         <div class="header-item">
-            <h1>Dicoding BookShelf App</h1>
+            <h1 class="header-title">Dicoding BookShelf App</h1>
             <button aria-label="Tombol Darkmode" id="darkmode-button" class="darkmode-button"></button>
         </div>
     </header>
@@ -75,17 +78,6 @@
                             <h1 class="card-title">Belum Selesai Dibaca</h1>
                         </div>
                         <div class="card-body" id="unfinish-book-list">
-                            <!-- <div class="card card-secondary">
-                                <div class="card-body">
-                                    <h2>Si Kancil Mencuri Timun</h2>
-                                    <h3>Joko Widodo</h3>
-                                    <h3>2024</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn-icon p-1 btn-trash"><i class="fa-regular fa-trash-can"></i></button>
-                                    <button class="btn-icon p-1 btn-checked"><i class="fa-solid fa-check-double"></i></button>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -95,17 +87,6 @@
                             <h1 class="card-title">Selesai Dibaca</h1>
                         </div>
                         <div class="card-body" id="finish-book-list">
-                            <!-- <div class="card card-secondary">
-                                <div class="card-body">
-                                    <h2>Si Kancil Mencuri Timun</h2>
-                                    <h3>Joko Widodo</h3>
-                                    <h3>2024</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn-icon p-1 btn-trash"><i class="fa-regular fa-trash-can"></i></button>
-                                    <button class="btn-icon p-1 btn-cross"><i class="fa-regular fa-circle-xmark"></i></button>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -114,8 +95,9 @@
     </main>
     <footer class="footer text-center">
         <h4>Di Buat Dengan <i class="fa-solid fa-heart heart-icon"></i> Di Nganjuk</h4>
-        <h4>2023 @ <a href="https://github.com/basiooo">Bagas Julianto</a></h4>
+        <h4>2023 @ <a href="https://github.com/basiooo" target="_blank">Bagas Julianto</a></h4>
     </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="/assets/js/main.js"></script>
 </body>
 
