@@ -18,7 +18,7 @@ const generateBookObject = (title, author, year, isComplete) => {
     id: +new Date(),
     title,
     author,
-    year,
+    year: parseInt(year),
     isComplete
   }
 }
