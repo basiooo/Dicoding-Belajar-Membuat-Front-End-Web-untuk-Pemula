@@ -6,32 +6,26 @@ const DarkMode = {
     })
   },
 
-  _activeteDarkMode (darkModeToggle) {
-    document.body.classList.add('darkmode')
-    document.getElementById('sweetalert-dark').removeAttribute('disabled')
-    window.localStorage.setItem('darkMode', '1')
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'
+  _toggleDarkMode (darkModeToggle, activate) {
+    if (activate) {
+      document.body.classList.add('darkmode')
+      window.localStorage.setItem('darkMode', '1')
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'
+    } else {
+      document.body.classList.remove('darkmode')
+      window.localStorage.setItem('darkMode', 'null')
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'
+    }
   },
-  _disableDarkMode (darkModeToggle) {
-    document.body.classList.remove('darkmode')
-    document.getElementById('sweetalert-dark').setAttribute('disabled', 'disabled')
-    window.localStorage.setItem('darkMode', 'null')
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'
-  },
+
   _checkDarkMode (currentMode, darkModeToggle) {
-    if (currentMode === '1') {
-      this._activeteDarkMode(darkModeToggle)
-    } else {
-      this._disableDarkMode(darkModeToggle)
-    }
+    this._toggleDarkMode(darkModeToggle, currentMode === '1')
   },
+
   _changeMode (darkModeToggle) {
-    const getMode = window.localStorage.getItem('darkMode')
-    if (getMode !== '1') {
-      this._activeteDarkMode(darkModeToggle)
-    } else {
-      this._disableDarkMode(darkModeToggle)
-    }
+    const currentMode = window.localStorage.getItem('darkMode')
+    this._toggleDarkMode(darkModeToggle, currentMode !== '1')
   }
 }
+
 export default DarkMode
