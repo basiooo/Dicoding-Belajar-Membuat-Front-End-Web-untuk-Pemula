@@ -129,7 +129,7 @@ const deleteBook = (bookId) => {
   })
 }
 
-document.addEventListener(config.RENDER_EVENT, function () {
+document.addEventListener(config.RENDER_EVENT, () => {
   finishBookList.innerHTML = ''
   unfinishBookList.innerHTML = ''
   for (const book of books) {
@@ -142,7 +142,7 @@ document.addEventListener(config.RENDER_EVENT, function () {
   }
 })
 
-document.addEventListener(config.SAVED_EVENT, function () {
+document.addEventListener(config.SAVED_EVENT, () => {
   console.log('SAVED_EVENT')
 })
 
