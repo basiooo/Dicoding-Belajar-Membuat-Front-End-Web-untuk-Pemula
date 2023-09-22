@@ -1,6 +1,6 @@
 const swRegister = async () => {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js', { type: 'module' })
+    navigator.serviceWorker.register('service-worker.js', { type: 'module' })
       .then(function () {
         console.log('Service Worker registration success')
       })
