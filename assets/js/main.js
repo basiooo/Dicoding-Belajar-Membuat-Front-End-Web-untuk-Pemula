@@ -149,7 +149,9 @@ document.addEventListener(config.SAVED_EVENT, () => {
 document.getElementById('search-book-form').addEventListener('input', (event) => {
   finishBookList.innerHTML = ''
   unfinishBookList.innerHTML = ''
-  searchBook(event.target.value).forEach((book) => {
+  const searchValue = event.target.value
+  const books = searchBook(searchValue)
+  books.forEach((book) => {
     const bookListTemplate = makeBook(book)
     if (!book.isComplete) {
       unfinishBookList.append(bookListTemplate)
@@ -164,6 +166,10 @@ window.addEventListener('load', () => {
     event.preventDefault()
     addBook()
     event.target.reset()
+  })
+  const searchBookForm = document.getElementById('search-book-form')
+  searchBookForm.addEventListener('submit', (event) => {
+    event.preventDefault()
   })
   loadDataFromStorage()
   swRegister()
