@@ -51,4 +51,15 @@ const searchBook = (title) => {
     return (book.title.toLowerCase().match(title.toLowerCase())) ? book : null
   })
 }
-export { books, isStorageExist, saveBookData, loadDataFromStorage, findBookIndex, findBook, searchBook }
+
+const generateBookObject = (title, author, year, isComplete) => {
+  return {
+    id: +new Date(),
+    title,
+    author,
+    year: parseInt(year),
+    isComplete
+  }
+}
+
+export { books, isStorageExist, saveBookData, loadDataFromStorage, findBookIndex, findBook, searchBook, generateBookObject }
