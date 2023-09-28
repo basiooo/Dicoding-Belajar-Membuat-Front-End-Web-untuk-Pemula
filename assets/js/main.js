@@ -148,7 +148,6 @@ const moveBookToUncomplete = (bookId) => {
 }
 const editBook = (bookId) => {
   const bookTarget = findBook(bookId)
-  console.log(bookTarget)
   fieldTitle.value = bookTarget.title
   fieldAuthor.value = bookTarget.author
   fieldYear.value = bookTarget.year
