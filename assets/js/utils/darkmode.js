@@ -7,12 +7,15 @@ const DarkMode = {
   },
 
   _toggleDarkMode (darkModeToggle, activate) {
+    const sweatAlertDarkMode = document.getElementById('sweetalert-dark')
     if (activate) {
       document.body.classList.add('darkmode')
+      sweatAlertDarkMode.removeAttribute('disabled')
       window.localStorage.setItem('darkMode', '1')
       darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'
     } else {
       document.body.classList.remove('darkmode')
+      sweatAlertDarkMode.setAttribute('disabled', 'disabled')
       window.localStorage.setItem('darkMode', 'null')
       darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'
     }
