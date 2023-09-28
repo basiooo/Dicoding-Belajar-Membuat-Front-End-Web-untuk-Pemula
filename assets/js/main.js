@@ -204,7 +204,6 @@ const emptyBook = () => {
 const updateBookLists = (searchValue = '') => {
   finishBookList.innerHTML = ''
   unfinishBookList.innerHTML = ''
-
   const foundBooks = searchBook(searchValue)
 
   if (foundBooks.length === 0) {
@@ -257,6 +256,7 @@ searchBookForm.addEventListener('submit', (event) => {
 })
 window.addEventListener('load', () => {
   loadDataFromStorage()
+  updateBookLists()
   swRegister()
   DarkMode.init({
     darkModeToggle: document.querySelector('#darkmode-button'),
